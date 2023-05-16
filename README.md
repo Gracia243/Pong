@@ -1,18 +1,13 @@
 # Pong for windows
 
 # 1) Import the modules
-The first step is to import the needed module to create the game as turtle module,
-we should also import the pygame module which in this case is more useful since the "os" library
-is unusable for windows.
+The first step is to import the necessary modules to create the game. We import the turtle module for game graphics and functionality. Additionally, we import the pygame module, which is particularly useful in this case as the 'os' library may not be compatible with Windows.
 
         import turtle
         import pygame
         
 # 2) Game design
-The second step is designing the game, as settling the ball's shape delimiting the game's screen, and defining the paddles' aspects and the game rule. 
-Concerning paddles, the number -350 means the paddle is settled on the left and 350 means that is settled on the right, and 0 means the middle.
-It considers the game screen proprieties since the width is 800 pixels. The ".goto()" method is used to move the turtle to an absolute position as:
-    (x: x coordinate of a Vec2D-vector; y: y coordinate of a Vec2D-vector)
+The second step involves designing the game, which includes determining the shape of the ball, defining the boundaries of the game screen, and specifying the characteristics of the paddles. In relation to the paddles, the value -350 indicates that the paddle is positioned on the left side, while 350 represents the right side, and 0 corresponds to the middle position. The design takes into consideration the properties of the game screen, with a width of 800 pixels. The '.goto()' method is utilized to move the turtle to an absolute position specified by the coordinates (x, y) of a Vec2D vector.
 
             #Creating the Ball
             ball = turtle.Turtle()
@@ -77,13 +72,7 @@ It considers the game screen proprieties since the width is 800 pixels. The ".go
             score_display.write("Player 1: 0 Player 2: 0", align="center", font=("Arial", 24, "normal"))
 
 # 3) Game Mechanism
-The third step is to apply the game mechanism. First, we need to define the ball movement in updating the x and y
-and coordinating the ball turtle object in the main game loop with the "sety" and "setx" functions. We can also adjust the ball's speed
-multiplying the dx and dy values by a constant factor. To enable collision mechanics in the game, 
-we need to continuously monitor the position of the ball relative to both the paddles and the screen edges. 
-By doing so, we can determine if the ball has collided with a paddle or if it has reached the boundaries of the screen.
- When the ball collides with a paddle, we reverse its direction by multiplying the dx value by -1. If the ball goes off the screen, we reset it to the centre and update the score. To track the points, we maintain a dictionary for each player, updating the values whenever a player scores. 
-The current score is displayed using the score display turtle's write function
+The third step involves implementing the game mechanics. Firstly, we define the movement of the ball by updating its x and y coordinates within the main game loop using the 'sety' and 'setx' functions. Additionally, we have the option to adjust the speed of the ball by multiplying the dx and dy values by a constant factor. To enable collision mechanics, we continuously monitor the position of the ball in relation to the paddles and screen edges. This allows us to detect collisions with paddles and determine if the ball has reached the screen boundaries. When the ball collides with a paddle, its direction is reversed by multiplying the dx value by -1. If the ball goes off the screen, it is reset to the center, and the score is updated. We keep track of the points using a dictionary for each player, and the current score is displayed using the write function of the score display turtle.
 
             #Function to move paddle_a up
             def paddle_a_up():
@@ -109,11 +98,7 @@ The current score is displayed using the score display turtle's write function
                 y -= 20
                 paddle_b.sety(y)
 # 4) Game Customising    
-The last step customise the game, to achieve this, we define functions that control the movement of the paddles,
-associating them with specific keys using the onkeypress function from the turtle module.
-In addition, we can enhance the game by providing customization options. 
-For instance, players can set the desired maximum points required for winning the game or 
-adjust the ball speed to increase or decrease the level of challenge.
+The final step is to customize the game. To accomplish this, we define functions that handle the movement of the paddles, associating them with specific keys using the onkeypress function from the turtle module. Additionally, we can enhance the game by offering customization options. For example, players can set the desired maximum points required to win the game or adjust the ball speed to increase or decrease the level of challenge.
 
         #Keyboard bindings
         wn.listen()
